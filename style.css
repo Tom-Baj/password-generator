@@ -1,0 +1,112 @@
+:root {
+  --black: #000000;
+  --dark-blue: #14213d;
+  --orange: #fca311;
+  --grey: #e5e5e5;
+  --white: #fff;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: var(--dark-blue);
+  max-height: 100vh;
+  font-family: "Mitr", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+}
+
+button {
+  background: none;
+}
+
+input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  accent-color: #ff0000; 
+}
+
+.container {
+  background-color: var(--grey);
+  border: 1px solid #000;
+  max-width: 70%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 150px auto;
+  border-radius: 15px 40px;
+  box-shadow: rgb(23,23,23) 0px 0px 60px 42px;}
+
+.title {
+  
+  color: var(--orange);
+  font-family: "Rubik Doodle Shadow", system-ui;
+  font-weight: 400;
+  font-size: 2rem;
+  font-style: normal;
+}
+
+/* Options */
+.options-container {
+  padding: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 5rem;
+}
+
+/* Range */
+.range-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  input {
+    margin: 0.5rem 0;
+   }
+}
+
+.range-section {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Checkbox */
+.checkbox-list {
+  gap: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+
+/* Button */
+.generate {
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  padding: 3px 10px;
+  font-family: "Mitr", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 20px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.generate:hover {
+  transform: scale(1.1);
+  background-color: var(--orange);
+  color: var(--white);
+
+}
+
+/* Mot de passe */
+.password-container {
+  display: none;
+}
