@@ -11,79 +11,86 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="favicon.ico" />
   </head>
   <body>
     <h1 class="title">Générateur de mots de passe</h1>
 
     <div class="container">
-      <div class="options-container">
+      <form>
         <div class="range-container">
-          <label for="charactere">Nombres de charactere</label>
+          <label for="character-range">Nombres de caractères</label>
           <div class="range-section">
             <input
               type="range"
-              name="charactere"
-              id="charactere"
+              name="character-range"
+              class="character-range"
+              id="character-range"
+              step="1"
               min="8"
               max="30"
               value="8"
             />
-            <span class="nombre-charactere">8</span>
           </div>
         </div>
-        <div class="checkbox-containers">
-          <div class="checkbox-list">
-            <div class="checkbox-lowercase checkbox-item">
-              <input
-                class="checkbox"
-                type="checkbox"
-                name="lowercase"
-                id="lowercase"
-              />
-              <label for="lowercase">Minuscules</label>
-            </div>
-            <div class="checkbox-uppercase checkbox-item">
-              <input
-                class="checkbox"
-                type="checkbox"
-                name="uppercase"
-                id="uppercase"
-              />
-              <label for="uppercase">Majuscules</label>
-            </div>
-            <div class="checkbox-numbers checkbox-item">
-              <input
-                class="checkbox"
-                type="checkbox"
-                name="numbers"
-                id="numbers"
-              />
-              <label for="numbers">Nombres</label>
-            </div>
-            <div class="checkbox-symboles checkbox-item">
-              <input
-                class="checkbox"
-                type="checkbox"
-                name="symboles"
-                id="symboles"
-              />
-              <label for="symboles">Symboles</label>
-            </div>
+        <div class="checkbox-container">
+          <div class="checkbox-lowercase checkbox-item">
+            <input
+              class="checkbox"
+              type="checkbox"
+              name="lowercase"
+              id="lowercase"
+              value="lowercase"
+            />
+            <label for="lowercase">Minuscules</label>
+          </div>
+          <div class="checkbox-uppercase checkbox-item">
+            <input
+              class="checkbox"
+              type="checkbox"
+              name="uppercase"
+              id="uppercase"
+              value="uppercase"
+            />
+            <label for="uppercase">Majuscules</label>
+          </div>
+          <div class="checkbox-numbers checkbox-item">
+            <input
+              class="checkbox"
+              type="checkbox"
+              name="numbers"
+              id="numbers"
+              value="numbers"
+            />
+            <label for="numbers">Nombres</label>
+          </div>
+          <div class="checkbox-symboles checkbox-item">
+            <input
+              class="checkbox"
+              type="checkbox"
+              name="symboles"
+              id="symboles"
+              value="symboles"
+              checked
+            />
+            <label for="symboles">Symboles</label>
           </div>
         </div>
-      </div>
-      <div class="password-container hidden">
-        <label for="password">Mot de passe généré</label>
-        <input
-          type="text"
-          class="password-input"
-          name="password"
-          id="password"
-        />
-      </div>
-      <div class="button-container">
-        <button id="generate" name="generate" class="generate">Génerer</button>
-      </div>
+        <div class="password-container">
+          <label for="password">Mot de passe généré</label>
+          <input
+            type="text"
+            class="password-input"
+            name="password"
+            id="password"
+          />
+        </div>
+        <div class="button-container">
+          <button type="button" id="generate" name="generate" class="generate">
+            Génerer
+          </button>
+        </div>
+      </form>
     </div>
   </body>
   <script src="script.js"></script>

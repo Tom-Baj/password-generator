@@ -31,13 +31,14 @@ input[type="checkbox"] {
 .container {
   background-color: var(--grey);
   border: 1px solid #000;
-  max-width: 70%;
+  max-width: 60%;
   height: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   margin: 150px auto;
+  padding-top: 2rem;
   border-radius: 15px 40px;
   box-shadow: rgb(23, 23, 23) 0px 0px 60px 42px;
 }
@@ -49,16 +50,6 @@ input[type="checkbox"] {
   font-weight: 400;
   font-size: 2rem;
   font-style: normal;
-}
-
-/* Options */
-.options-container {
-  padding: 3rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  gap: 5rem;
 }
 
 /* Range */
@@ -81,13 +72,20 @@ input[type="checkbox"] {
 }
 
 /* Checkbox */
-.checkbox-list {
+.checkbox-container {
+  padding: 3rem;
   gap: 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
 
 /* Button */
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .generate {
   margin-bottom: 2rem;
   border-radius: 10px;
@@ -107,7 +105,15 @@ input[type="checkbox"] {
 
 /* Mot de passe */
 .password-container {
-  display: none;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-direction: column;
+  margin: 3rem;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
 }
 
 /* Autre */
