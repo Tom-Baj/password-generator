@@ -104,7 +104,8 @@ input[type="checkbox"] {
 }
 
 /* Mot de passe */
-.password-container {
+/* .password-container {
+  color: #000;
   display: flex;
   align-content: center;
   justify-content: center;
@@ -114,7 +115,7 @@ input[type="checkbox"] {
   text-align: center;
   font-size: 18px;
   font-weight: 500;
-}
+} */
 
 /* Autre */
 .hidden {
