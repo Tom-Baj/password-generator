@@ -41,6 +41,7 @@ input[type="checkbox"] {
   padding-top: 2rem;
   border-radius: 15px 40px;
   box-shadow: rgb(23, 23, 23) 0px 0px 60px 42px;
+  position: relative;
 }
 
 .title {
@@ -104,8 +105,7 @@ input[type="checkbox"] {
 }
 
 /* Mot de passe */
-/* .password-container {
-  color: #000;
+.password-container {
   display: flex;
   align-content: center;
   justify-content: center;
@@ -115,7 +115,44 @@ input[type="checkbox"] {
   text-align: center;
   font-size: 18px;
   font-weight: 500;
-} */
+}
+
+.password-label {
+  font-size: 20px;
+}
+
+.zone-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.input-password {
+  border-radius: 25px;
+  width: 75%;
+  height: 25px;
+}
+
+.back-button {
+  position: absolute;
+  top: 15px;
+  left: 25px;
+}
+
+.password-button {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  border: none;
+}
+
+.copy-button {
+  position: absolute;
+  top: 107px;
+  right: 132px;
+}
 
 /* Autre */
 .hidden {

@@ -161,19 +161,40 @@ function resetForm() {
 function createPasswordZone() {
   const labelPassword = document.createElement("label");
   labelPassword.classList.add("password-label");
-  labelPassword.textContent = "Mots de passe :";
+  labelPassword.textContent = "Mots de passe";
+  labelPassword.setAttribute("name", "input-password");
 
   const inputPassword = document.createElement("input");
   inputPassword.classList.add("input-password");
+  inputPassword.setAttribute("type", "readonly");
+
+  const zoneInput = document.createElement("div");
+  zoneInput.classList.add("zone-input");
 
   const backButton = document.createElement("button");
-  backButton.classList.add("back-button");
+  const backButtonSVG = document.createElement("img");
+  backButtonSVG.src = "/assets/arrow.svg";
+  backButtonSVG.alt = "fleche retour";
+  backButtonSVG.classList.add("back-arrow");
+  backButton.classList.add("back-button", "password-button");
 
-  passwordContainer.appendChild(labelPassword);
-  passwordContainer.appendChild(inputPassword);
+  const copyButton = document.createElement("button");
+  const copyButtonSVG = document.createElement("img");
+  copyButtonSVG.src = "/assets/copy.svg";
+  copyButtonSVG.alt = "fleche retour";
+  copyButtonSVG.classList.add("copy-icon");
+  copyButton.classList.add("copy-button", "password-button");
+
   passwordContainer.appendChild(backButton);
+  backButton.appendChild(backButtonSVG);
+  passwordContainer.appendChild(labelPassword);
+  passwordContainer.appendChild(zoneInput);
+  zoneInput.appendChild(inputPassword);
+  zoneInput.appendChild(copyButton);
+  copyButton.appendChild(copyButtonSVG);
 
   backButton.addEventListener("click", () => {
+    passwordContainer.innerHTML = "";
     displayPasswordZone();
   });
 }
@@ -194,10 +215,10 @@ generateButton.addEventListener("click", (event) => {
     }
   });
 
-  if (checkboxValide === 0) {
+  /*   if (checkboxValide === 0) {
     alert("Veuillez sélectionner au moins une option.");
     return;
-  }
+  } */
 
   let finalList = finalSelection.flat();
   let finalItem = finalList.length;
