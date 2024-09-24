@@ -105,12 +105,10 @@ function clickCheckbox() {
     checkbox.addEventListener("click", () => {
       if (checkbox.id === "lowercase") {
         if (checkbox.checked) {
-          // Ajouter seulement si ça n'existe pas déjà dans finalSelection
           if (!finalSelection.includes(lowercase)) {
             finalSelection.push(lowercase);
           }
         } else {
-          // Supprimer si la case est décochée
           finalSelection = finalSelection.filter((item) => item !== lowercase);
         }
       }
@@ -144,6 +142,9 @@ function clickCheckbox() {
           finalSelection = finalSelection.filter((item) => item !== symbols);
         }
       }
+
+      // Activer ou désactiver le bouton generateButton en fonction de la sélection
+      generateButton.disabled = finalSelection.length === 0;
     });
   });
 }
@@ -231,21 +232,7 @@ function displayPasswordZone() {
 generateButton.addEventListener("click", (event) => {
   event.preventDefault();
 
-  let checkboxValide = 0;
-  allCheckbox.forEach((checkbox) => {
-    if (checkbox.checked) {
-      checkboxValide++;
-    }
-  });
-
-  /*   if (checkboxValide === 0) {
-    alert("Veuillez sélectionner au moins une option.");
-    return;
-  } */
-
   let finalList = finalSelection.flat();
-  let finalItem = finalList.length;
-
   let passwordLength = passwordRange.value;
 
   password = "";
@@ -261,3 +248,6 @@ generateButton.addEventListener("click", (event) => {
 
 displayPasswordLength();
 clickCheckbox();
+
+// Désactiver le bouton generateButton par défaut
+generateButton.disabled = true;
