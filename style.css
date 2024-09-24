@@ -115,10 +115,12 @@ input[type="checkbox"] {
   text-align: center;
   font-size: 18px;
   font-weight: 500;
+  gap: 2rem;
 }
 
 .password-label {
   font-size: 20px;
+  text-decoration: underline;
 }
 
 .zone-input {
@@ -132,13 +134,10 @@ input[type="checkbox"] {
 .input-password {
   border-radius: 25px;
   width: 75%;
-  height: 25px;
-}
-
-.back-button {
-  position: absolute;
-  top: 15px;
-  left: 25px;
+  height: 28px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 15px;
 }
 
 .password-button {
@@ -148,10 +147,20 @@ input[type="checkbox"] {
   border: none;
 }
 
+.back-button {
+  position: absolute;
+  top: 15px;
+  left: 25px;
+}
+
 .copy-button {
   position: absolute;
-  top: 107px;
-  right: 132px;
+  top: 140px;
+  right: 100px;
+}
+
+.copy-button:active {
+  color: #fca311;
 }
 
 /* Autre */
