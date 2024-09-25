@@ -38,7 +38,7 @@ input[type="checkbox"] {
   align-items: center;
   flex-direction: column;
   margin: 150px auto;
-  padding-top: 2rem;
+  padding: 2rem 0;
   border-radius: 15px 40px;
   box-shadow: rgb(23, 23, 23) 0px 0px 60px 42px;
   position: relative;
@@ -111,16 +111,17 @@ input[type="checkbox"] {
   justify-content: center;
   gap: 1rem;
   flex-direction: column;
-  margin: 3rem;
+  margin: 2rem 3rem;
   text-align: center;
   font-size: 18px;
   font-weight: 500;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .password-label {
   font-size: 20px;
   text-decoration: underline;
+  text-align: start;
 }
 
 .zone-input {
@@ -153,19 +154,27 @@ input[type="checkbox"] {
   left: 25px;
 }
 
-.copy-button {
-  position: absolute;
-  top: 140px;
-  right: 100px;
-}
-
-.copy-button:active {
-  color: #fca311;
+.strong-meter {
+  margin-bottom: 2rem;
+  height: 10px;
+  margin: auto;
 }
 
 /* Autre */
 .hidden {
   display: none;
+}
+
+#light {
+  color: #ff0000;
+}
+
+#medium {
+  color: #fca311;
+}
+
+#strong {
+  color: green;
 }
 
 /* Mobile devices (portrait and landscape) */
@@ -192,6 +201,11 @@ input[type="checkbox"] {
 
   .checkbox-list {
     grid-template-columns: 1fr;
+  }
+
+  .checkbox-container {
+    display: flex;
+    flex-direction: column;
   }
 
   .generate {
@@ -309,5 +323,8 @@ input[type="checkbox"] {
 
   .password-container {
     width: 60%;
+  }
+
+  .copy-button {
   }
 }

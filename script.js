@@ -5,6 +5,9 @@ const passwordRange = document.querySelector(".character-range");
 const rangeSection = document.querySelector(".range-section");
 const allCheckbox = document.querySelectorAll(".checkbox");
 const passwordInput = document.getElementById("password");
+const strongContainer = document.querySelector(".strong-container");
+const strongMeter = document.querySelector(".strong-meter");
+const textMeter = document.querySelector(".text-meter-span");
 
 const lowercase = [
   "a",
@@ -156,6 +159,7 @@ function resetForm() {
     }
     passwordRange.value = 8;
     document.querySelector(".text-range-value").innerText = 8;
+    generateButton.disabled = true;
   });
 }
 
@@ -175,7 +179,6 @@ function createPasswordZone() {
   const backButton = document.createElement("button");
   backButton.classList.add("back-button", "password-button");
 
-  // Contenu SVG pour le bouton de retour, avec une taille de 36x36
   const backButtonSVG = `
     <svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 0 24 24" width="36">
       <path d="M14.71 15.88L10.83 12l3.88-3.88c.39-.39.39-1.02 0-1.41-.39-.39-1.02-.39-1.41 0L8.71 11.3c-.39.39-.39 1.02 0 1.41l4.59 4.59c.39.39 1.02.39 1.41 0 .38-.39.39-1.03 0-1.42z"/>
@@ -186,7 +189,6 @@ function createPasswordZone() {
   const copyButton = document.createElement("button");
   copyButton.classList.add("copy-button", "password-button");
 
-  // Contenu SVG pour le bouton de copie
   const copyButtonSVG = `
     <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
       <path d="M0 0h24v24H0V0z" fill="none"/>
@@ -203,6 +205,7 @@ function createPasswordZone() {
 
   backButton.addEventListener("click", () => {
     passwordContainer.innerHTML = "";
+    finalSelection = [];
     displayPasswordZone();
   });
 
@@ -217,8 +220,6 @@ function createPasswordZone() {
       });
   });
 
-  console.log("input password :", inputPassword);
-  console.log("password :", password);
   inputPassword.innerHTML = "";
   inputPassword.setAttribute("value", password);
 }
@@ -227,6 +228,31 @@ function displayPasswordZone() {
   mainContainer.classList.toggle("hidden");
   passwordContainer.classList.toggle("hidden");
   generateButton.classList.toggle("hidden");
+  strongContainer.classList.toggle("hidden");
+}
+
+function evalPassword(password) {
+  let score = 0;
+
+  if (password.length >= 8 && password.length <= 14) {
+    textMeter.id = "light";
+    textMeter.innerText = "Faible";
+    score += 1;
+  }
+  if (password.length >= 15 && password.length <= 19) {
+    textMeter.id = "medium";
+    textMeter.innerText = "Moyen";
+
+    score += 1;
+  }
+  if (password.length >= 20) {
+    textMeter.id = "strong";
+    textMeter.innerText = "Fort";
+
+    score += 1;
+  }
+
+  console.log(score);
 }
 
 generateButton.addEventListener("click", (event) => {
@@ -244,10 +270,10 @@ generateButton.addEventListener("click", (event) => {
   resetForm();
   createPasswordZone();
   displayPasswordZone();
+  evalPassword(password);
 });
 
 displayPasswordLength();
 clickCheckbox();
 
-// Désactiver le bouton generateButton par défaut
 generateButton.disabled = true;
