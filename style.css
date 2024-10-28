@@ -1,7 +1,9 @@
 :root {
   --black: #000000;
   --dark-blue: #14213d;
+  --light-blue: #1f2d50;
   --orange: #fca311;
+  --light-orange: #ffcb47;
   --grey: #e5e5e5;
   --white: #fff;
 }
@@ -10,12 +12,9 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-color: var(--dark-blue);
-  max-height: 100vh;
+  background: linear-gradient(135deg, var(--dark-blue), var(--light-blue));
+  color: var(--white);
   font-family: "Mitr", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 16px;
 }
 
 button {
@@ -23,45 +22,56 @@ button {
 }
 
 input[type="checkbox"] {
-  width: 15px;
-  height: 15px;
-  accent-color: #ff0000;
+  width: 20px;
+  height: 20px;
+  accent-color: var(--orange);
+  transition: all 0.3s ease;
 }
 
-.container {
-  background-color: var(--grey);
-  border: 1px solid #000;
+input[type="checkbox"]:hover {
+  transform: scale(1.2);
+}
+
+main {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
   max-width: 60%;
-  height: 400px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin: 150px auto;
-  padding: 2rem 0;
+  padding: 2rem;
+  margin: 50px auto;
   border-radius: 15px 40px;
-  box-shadow: rgb(23, 23, 23) 0px 0px 60px 42px;
-  position: relative;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
 }
 
 .title {
   color: var(--orange);
-  text-align: center;
   font-family: "Rubik Doodle Shadow", system-ui;
-  font-weight: 400;
-  font-size: 2rem;
-  font-style: normal;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
-/* Range */
-.range-container {
+.number-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  gap: 5rem;
+}
+
+.range-container,
+.number-password {
   display: flex;
   align-items: center;
   flex-direction: column;
+  color: var(--white);
+  gap: 1rem;
 }
 
-.range-container input {
-  margin: 0.5rem 0;
+.input-number {
+  border-radius: 50px;
+  width: 20%;
+  font-weight: bold;
+  text-align: center;
 }
 
 .range-section {
@@ -72,15 +82,24 @@ input[type="checkbox"] {
   align-items: center;
 }
 
-/* Checkbox */
+.options-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 3rem auto;
+}
+
 .checkbox-container {
-  padding: 3rem;
   gap: 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
 
-/* Button */
+.checkbox-container label {
+  color: var(--light-orange);
+}
+
 .button-container {
   display: flex;
   justify-content: center;
@@ -88,48 +107,45 @@ input[type="checkbox"] {
 }
 
 .generate {
-  margin-bottom: 2rem;
+  background-color: var(--light-orange);
   border-radius: 10px;
-  padding: 3px 10px;
+  padding: 10px 20px;
   font-family: "Mitr", sans-serif;
   font-weight: 500;
-  font-style: normal;
   font-size: 20px;
   transition: transform 0.3s ease, background-color 0.3s ease;
+  border: none;
+  cursor: pointer;
 }
 
 .generate:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
   background-color: var(--orange);
   color: var(--white);
 }
 
 /* Mot de passe */
 .password-container {
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  gap: 1rem;
-  flex-direction: column;
-  margin: 2rem 3rem;
+  background-color: var(--light-blue);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   text-align: center;
-  font-size: 18px;
-  font-weight: 500;
-  gap: 1rem;
+  margin-top: 2rem;
 }
 
 .password-label {
   font-size: 20px;
-  text-decoration: underline;
-  text-align: start;
+  color: var(--orange);
+  margin-bottom: 1rem;
 }
 
 .zone-input {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: row;
   gap: 1rem;
+  margin-top: 10px;
 }
 
 .input-password {
@@ -139,28 +155,44 @@ input[type="checkbox"] {
   text-align: center;
   font-weight: 700;
   font-size: 15px;
-}
-
-.password-button {
-  height: 35px;
-  width: 35px;
-  border-radius: 50%;
+  background-color: var(--dark-blue);
+  color: var(--white);
   border: none;
 }
 
-.back-button {
-  position: absolute;
-  top: 15px;
-  left: 25px;
+.password-button {
+  background-color: var(--light-orange);
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.password-button:hover {
+  background-color: var(--orange);
+}
+
+.strong-container {
+  margin: 20px 0;
+  text-align: center;
 }
 
 .strong-meter {
-  margin-bottom: 2rem;
   height: 10px;
-  margin: auto;
+  margin-top: 20px;
+  background-color: var(--grey);
 }
 
-/* Autre */
+.text-meter-span {
+  font-weight: bold;
+  color: var(--light-orange);
+}
+
 .hidden {
   display: none;
 }
@@ -170,14 +202,14 @@ input[type="checkbox"] {
 }
 
 #medium {
-  color: #fca311;
+  color: var(--orange);
 }
 
 #strong {
   color: green;
 }
 
-/* Mobile devices (portrait and landscape) */
+/* Mobile devices */
 @media (max-width: 480px) {
   .container {
     width: 90%;
@@ -189,23 +221,15 @@ input[type="checkbox"] {
     font-size: 1.5rem;
   }
 
-  .options-container {
-    flex-direction: column;
-    gap: 2rem;
-  }
-
   .range-section {
     flex-direction: column;
     gap: 0.5rem;
   }
 
-  .checkbox-list {
-    grid-template-columns: 1fr;
-  }
-
   .checkbox-container {
     display: flex;
     flex-direction: column;
+    gap: 1rem;
   }
 
   .generate {
@@ -218,7 +242,7 @@ input[type="checkbox"] {
   }
 }
 
-/* Tablets (portrait and landscape) */
+/* Tablets */
 @media (min-width: 481px) and (max-width: 768px) {
   .container {
     width: 80%;
@@ -230,23 +254,18 @@ input[type="checkbox"] {
     font-size: 1.75rem;
   }
 
-  .options-container {
-    flex-direction: column;
-    gap: 3rem;
-  }
-
   .range-section {
     flex-direction: column;
     gap: 1rem;
   }
 
-  .checkbox-list {
-    grid-template-columns: 1fr 1fr;
+  .checkbox-container {
+    gap: 2rem;
   }
 
   .generate {
     font-size: 18px;
-    padding: 5px 20px;
+    padding: 10px 20px;
   }
 
   .password-container {
@@ -254,7 +273,7 @@ input[type="checkbox"] {
   }
 }
 
-/* Desktops and laptops */
+/* Desktops */
 @media (min-width: 769px) and (max-width: 1200px) {
   .container {
     width: 60%;
@@ -266,23 +285,17 @@ input[type="checkbox"] {
     font-size: 2rem;
   }
 
-  .options-container {
-    flex-direction: row;
-    gap: 4rem;
-  }
-
   .range-section {
-    flex-direction: row;
     gap: 1rem;
   }
 
-  .checkbox-list {
-    grid-template-columns: 1fr 1fr;
+  .checkbox-container {
+    gap: 2rem;
   }
 
   .generate {
     font-size: 20px;
-    padding: 5px 25px;
+    padding: 10px 25px;
   }
 
   .password-container {
@@ -302,29 +315,20 @@ input[type="checkbox"] {
     font-size: 2.5rem;
   }
 
-  .options-container {
-    flex-direction: row;
-    gap: 5rem;
-  }
-
   .range-section {
-    flex-direction: row;
     gap: 1rem;
   }
 
-  .checkbox-list {
-    grid-template-columns: 1fr 1fr;
+  .checkbox-container {
+    gap: 2rem;
   }
 
   .generate {
     font-size: 22px;
-    padding: 5px 30px;
+    padding: 10px 30px;
   }
 
   .password-container {
     width: 60%;
-  }
-
-  .copy-button {
   }
 }

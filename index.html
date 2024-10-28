@@ -14,13 +14,15 @@
     <link rel="icon" href="favicon.ico" />
   </head>
   <body>
-    <h1 class="title">Générateur de mots de passe</h1>
-    <div class="container">
+    <header>
+      <h1 class="title">Générateur <br />de <br />mots de passe</h1>
+    </header>
+    <main class="container">
       <form>
         <div class="main-container">
-          <div class="range-container">
-            <label for="character-range">Nombres de caractères</label>
-            <div class="range-section">
+          <div class="number-container">
+            <div class="range-container">
+              <label for="character-range">Nombres de caractères</label>
               <input
                 type="range"
                 name="character-range"
@@ -32,47 +34,59 @@
                 value="8"
               />
             </div>
+            <div class="number-password">
+              <label for="number">Nombre de mots de passe</label>
+              <input
+                class="input-number"
+                type="number"
+                name="input-number"
+                id="input-number"
+              />
+            </div>
           </div>
-          <div class="checkbox-container">
-            <div class="checkbox-lowercase checkbox-item">
-              <input
-                class="checkbox"
-                type="checkbox"
-                name="lowercase"
-                id="lowercase"
-                value="lowercase"
-              />
-              <label for="lowercase">Minuscules</label>
-            </div>
-            <div class="checkbox-uppercase checkbox-item">
-              <input
-                class="checkbox"
-                type="checkbox"
-                name="uppercase"
-                id="uppercase"
-                value="uppercase"
-              />
-              <label for="uppercase">Majuscules</label>
-            </div>
-            <div class="checkbox-numbers checkbox-item">
-              <input
-                class="checkbox"
-                type="checkbox"
-                name="numbers"
-                id="numbers"
-                value="numbers"
-              />
-              <label for="numbers">Nombres</label>
-            </div>
-            <div class="checkbox-symboles checkbox-item">
-              <input
-                class="checkbox"
-                type="checkbox"
-                name="symbols"
-                id="symbols"
-                value="symbols"
-              />
-              <label for="symbols">Symboles</label>
+          <div class="options-container">
+            <p class="title-options">Options des caractères</p>
+            <div class="checkbox-container">
+              <div class="checkbox-lowercase checkbox-item">
+                <input
+                  class="checkbox"
+                  type="checkbox"
+                  name="lowercase"
+                  id="lowercase"
+                  value="lowercase"
+                />
+                <label for="lowercase">Minuscules</label>
+              </div>
+              <div class="checkbox-uppercase checkbox-item">
+                <input
+                  class="checkbox"
+                  type="checkbox"
+                  name="uppercase"
+                  id="uppercase"
+                  value="uppercase"
+                />
+                <label for="uppercase">Majuscules</label>
+              </div>
+              <div class="checkbox-numbers checkbox-item">
+                <input
+                  class="checkbox"
+                  type="checkbox"
+                  name="numbers"
+                  id="numbers"
+                  value="numbers"
+                />
+                <label for="numbers">Nombres</label>
+              </div>
+              <div class="checkbox-symboles checkbox-item">
+                <input
+                  class="checkbox"
+                  type="checkbox"
+                  name="symbols"
+                  id="symbols"
+                  value="symbols"
+                />
+                <label for="symbols">Symboles</label>
+              </div>
             </div>
           </div>
         </div>
@@ -92,7 +106,7 @@
           Force du mot de passe : <span class="text-meter-span"></span>
         </p>
       </div>
-    </div>
+    </main>
   </body>
   <script src="script.js"></script>
 </html>
