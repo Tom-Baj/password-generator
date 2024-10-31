@@ -1,10 +1,10 @@
 const mainContainer = document.querySelector(".main-container");
 const passwordContainer = document.querySelector(".password-container");
 const generateButton = document.getElementById("generate");
-const passwordRange = document.querySelector(".character-range");
-const rangeSection = document.querySelector(".range-section");
+const rangeSection = document.querySelector(".caractere-range");
+const rangeContainer = document.querySelector(".range-container");
 const allCheckbox = document.querySelectorAll(".checkbox");
-const passwordInput = document.getElementById("password");
+const passwordInput = document.getElementById("input-number");
 const strongContainer = document.querySelector(".strong-container");
 const strongMeter = document.querySelector(".strong-meter");
 const textMeter = document.querySelector(".text-meter-span");
@@ -94,12 +94,12 @@ function displayPasswordLength() {
   numberValue.classList.add("text-range-value");
   rangeSection.appendChild(numberValue);
 
-  passwordRange.addEventListener("change", () => {
-    rangeValue = passwordRange.value;
+  rangeSection.addEventListener("change", () => {
+    rangeValue = rangeSection.value;
     numberValue.innerText = rangeValue;
   });
 
-  rangeValue = passwordRange.value;
+  rangeValue = rangeSection.value;
   numberValue.innerText = rangeValue;
 }
 
@@ -171,7 +171,8 @@ function createPasswordZone() {
 
   const inputPassword = document.createElement("input");
   inputPassword.classList.add("input-password");
-  inputPassword.setAttribute("type", "readonly");
+  inputPassword.setAttribute("type", "text");
+  inputPassword.setAttribute("readonly", true);
 
   const zoneInput = document.createElement("div");
   zoneInput.classList.add("zone-input");
@@ -242,13 +243,11 @@ function evalPassword(password) {
   if (password.length >= 15 && password.length <= 19) {
     textMeter.id = "medium";
     textMeter.innerText = "Moyen";
-
     score += 1;
   }
   if (password.length >= 20) {
     textMeter.id = "strong";
     textMeter.innerText = "Fort";
-
     score += 1;
   }
 
@@ -261,7 +260,7 @@ generateButton.addEventListener("click", (event) => {
   let finalList = finalSelection.flat();
   let passwordLength = passwordRange.value;
 
-  password = "";
+  let password = "";
   for (let i = 0; i < passwordLength; i++) {
     let randomIndex = Math.floor(Math.random() * finalList.length);
     password += finalList[randomIndex];

@@ -20,29 +20,18 @@
     <main class="container">
       <form>
         <div class="main-container">
-          <div class="number-container">
-            <div class="range-container">
-              <label for="character-range">Nombres de caractères</label>
-              <input
-                type="range"
-                name="character-range"
-                class="character-range"
-                id="character-range"
-                step="1"
-                min="8"
-                max="30"
-                value="8"
-              />
-            </div>
-            <div class="number-password">
-              <label for="number">Nombre de mots de passe</label>
-              <input
-                class="input-number"
-                type="number"
-                name="input-number"
-                id="input-number"
-              />
-            </div>
+          <div class="range-container">
+            <label for="caractere-range">Nombres de caractères</label>
+            <input
+              type="range"
+              name="caractere-range"
+              class="caractere-range"
+              id="caractere-range"
+              step="1"
+              min="8"
+              max="30"
+              value="8"
+            />
           </div>
           <div class="options-container">
             <p class="title-options">Options des caractères</p>
@@ -89,7 +78,17 @@
               </div>
             </div>
           </div>
+          <div class="number-password">
+            <label for="input-number">Nombre de mots de passe</label>
+            <input
+              class="input-number"
+              type="number"
+              name="input-number"
+              id="input-number"
+            />
+          </div>
         </div>
+
         <div class="button-container">
           <input
             type="button"
@@ -107,6 +106,6 @@
         </p>
       </div>
     </main>
+    <script src="script.js"></script>
   </body>
-  <script src="script.js"></script>
 </html>
