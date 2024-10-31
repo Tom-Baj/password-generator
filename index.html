@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Password Generator</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -11,17 +12,18 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="favicon.ico" />
   </head>
   <body>
     <header>
-      <h1 class="title">Générateur <br />de <br />mots de passe</h1>
+      <h1 class="title">Password Generator</h1>
     </header>
     <main class="container">
       <form>
         <div class="main-container">
           <div class="range-container">
-            <label for="caractere-range">Nombres de caractères</label>
+            <label class="range-label" for="caractere-range"
+              >Nombres de caractères</label
+            >
             <input
               type="range"
               name="caractere-range"
@@ -77,15 +79,6 @@
                 <label for="symbols">Symboles</label>
               </div>
             </div>
-          </div>
-          <div class="number-password">
-            <label for="input-number">Nombre de mots de passe</label>
-            <input
-              class="input-number"
-              type="number"
-              name="input-number"
-              id="input-number"
-            />
           </div>
         </div>
 

@@ -1,6 +1,6 @@
 const mainContainer = document.querySelector(".main-container");
 const passwordContainer = document.querySelector(".password-container");
-const generateButton = document.getElementById("generate");
+const generateButton = document.querySelector(".generate");
 const rangeSection = document.querySelector(".caractere-range");
 const rangeContainer = document.querySelector(".range-container");
 const allCheckbox = document.querySelectorAll(".checkbox");
@@ -89,10 +89,12 @@ const symbols = [
 
 let finalSelection = [];
 
+let password = "";
+
 function displayPasswordLength() {
   let numberValue = document.createElement("p");
   numberValue.classList.add("text-range-value");
-  rangeSection.appendChild(numberValue);
+  rangeContainer.appendChild(numberValue);
 
   rangeSection.addEventListener("change", () => {
     rangeValue = rangeSection.value;
@@ -146,7 +148,6 @@ function clickCheckbox() {
         }
       }
 
-      // Activer ou désactiver le bouton generateButton en fonction de la sélection
       generateButton.disabled = finalSelection.length === 0;
     });
   });
@@ -157,10 +158,10 @@ function resetForm() {
     if (checkbox.checked) {
       checkbox.checked = false;
     }
-    passwordRange.value = 8;
-    document.querySelector(".text-range-value").innerText = 8;
-    generateButton.disabled = true;
   });
+  rangeSection.value = 8;
+  document.querySelector(".text-range-value").innerText = 8;
+  generateButton.disabled = true;
 }
 
 function createPasswordZone() {
@@ -258,16 +259,15 @@ generateButton.addEventListener("click", (event) => {
   event.preventDefault();
 
   let finalList = finalSelection.flat();
-  let passwordLength = passwordRange.value;
+  let passwordLength = rangeSection.value;
 
-  let password = "";
   for (let i = 0; i < passwordLength; i++) {
     let randomIndex = Math.floor(Math.random() * finalList.length);
     password += finalList[randomIndex];
   }
 
   resetForm();
-  createPasswordZone();
+  createPasswordZone(password);
   displayPasswordZone();
   evalPassword(password);
 });
