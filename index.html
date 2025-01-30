@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Generator</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&family=Rubik+Doodle+Shadow&family=Trispace:wght@100..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1 class="title">Password Generator</h1>
+    </header>
+    <main class="container">
+      <form>
+        <div class="main-container">
+          <div class="range-container">
+            <label class="range-label" for="caractere-range"
+              >Nombres de caractères</label
+            >
+            <input
+              type="range"
+              name="caractere-range"
+              class="caractere-range"
+              id="caractere-range"
+              step="1"
+              min="8"
+              max="30"
+              value="8"
+            />
+          </div>
+          <div class="options-container">
+            <p class="title-options">Options des caractères</p>
+            <div class="checkbox-container">
+              <div class="checkbox-lowercase checkbox-item">
+                <input
+                  class="checkbox"
+                  type="checkbox"
+                  name="lowercase"
+                  id="lowercase"
+                  value="lowercase"
+                />
+                <label for="lowercase">Minuscules</label>
+              </div>
+              <div class="checkbox-uppercase checkbox-item">
+                <input
+                  class="checkbox"
+                  type="checkbox"
+                  name="uppercase"
+                  id="uppercase"
+                  value="uppercase"
+                />
+                <label for="uppercase">Majuscules</label>
+              </div>
+              <div class="checkbox-numbers checkbox-item">
+                <input
+                  class="checkbox"
+                  type="checkbox"
+                  name="numbers"
+                  id="numbers"
+                  value="numbers"
+                />
+                <label for="numbers">Nombres</label>
+              </div>
+              <div class="checkbox-symboles checkbox-item">
+                <input
+                  class="checkbox"
+                  type="checkbox"
+                  name="symbols"
+                  id="symbols"
+                  value="symbols"
+                />
+                <label for="symbols">Symboles</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="button-container">
+          <input
+            type="button"
+            id="generate"
+            name="generate"
+            class="generate"
+            value="Génerer"
+          />
+        </div>
+      </form>
+      <div class="password-container hidden"></div>
+      <div class="strong-container hidden">
+        <p class="text-meter">
+          Force du mot de passe : <span class="text-meter-span"></span>
+        </p>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
