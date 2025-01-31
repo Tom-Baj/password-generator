@@ -44,7 +44,11 @@ main {
 }
 
 .title {
+<<<<<<< HEAD
   color: var(--white);
+=======
+  color: var(--orange);
+>>>>>>> 8ebe81fcec613361ef74a229b9fc83235794cf5a
   font-family: "Rubik Doodle Shadow", system-ui;
   text-align: center;
   font-size: 2.5rem;

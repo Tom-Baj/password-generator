@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Générateur de Mots de Passe
 
 Bienvenue dans le dépôt du Générateur de Mots de Passe. Ce projet est une application web simple qui permet de créer des mots de passe sécurisés en fonction des critères définis par l'utilisateur.
@@ -68,3 +69,6 @@ Pour toute question ou suggestion, veuillez me contacter via [email](mailto:tom.
 ---
 
 Merci d'avoir consulté ce projet ! N'hésitez pas à l'utiliser et à proposer des améliorations.
+=======
+# Password-generator
+>>>>>>> 8ebe81fcec613361ef74a229b9fc83235794cf5a
