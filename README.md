@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Générateur de Mots de Passe
 
 Bienvenue dans le dépôt du Générateur de Mots de Passe. Ce projet est une application web simple qui permet de créer des mots de passe sécurisés en fonction des critères définis par l'utilisateur.
